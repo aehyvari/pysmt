@@ -87,7 +87,7 @@ else:
     build_dir = os.path.join(os.path.expanduser('~'), '.pyxbld')
     path = os.path.join(os.path.dirname(__file__), "parser.py")
     name="pysmt.smtlib.parser.parser"
-
+    os.makedirs(path)
     so_path = pyximport.build_module(name, path,
                                      pyxbuild_dir=build_dir)
     mod = imp.load_dynamic(name, so_path)
